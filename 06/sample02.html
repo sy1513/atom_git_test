@@ -11,12 +11,13 @@
 <script>
 
 	var data = 'グローバル';
+	var obj = {data: 'オブジェクトのデータ'};
 
-	function getData() {
-		console.log(this.data);
+	function getData(value1 , value2) {
+		console.log(this.data , value1 , value2);
 	}
 
-	getData();
+	getData.apply(obj , [1 , 2]);
 
 </script>
 
