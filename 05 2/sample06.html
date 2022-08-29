@@ -10,6 +10,24 @@
 
 <script>
 
+function counter(init){
+	var count = init;
+
+	return function(){
+
+		count++;
+  return count;
+};
+}
+
+var counter1 =counter(0);
+var counter2 =counter(100);
+
+console.log(counter1());
+console.log(counter1());
+console.log(counter2());
+console.log(counter1());
+
 
 </script>
 
