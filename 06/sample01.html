@@ -10,6 +10,18 @@
 
 <script>
 
+var Human = function(firstName, lastName){
+	this.firstName = firstName;
+  this.lastName = lastName;
+	this.getFullName = function(){
+		return lastName + ' ' + firstName;
+	};
+};
+
+var human1 = new Human('太郎' , '田中');
+
+console.log(human1);
+console.log(human1.getFullName());
 
 </script>
 
