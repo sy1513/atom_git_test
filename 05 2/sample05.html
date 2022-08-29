@@ -10,9 +10,12 @@
 
 <script>
 
-	function showName(name) {
-		console.log(name);
-	}
+	function showName() {
+for (var i = 0 ; i < arguments.length; i++ ){
+	  console.log(arguments[i]);
+}
+}
+showName('田中' , '佐藤')
 
 </script>
 
