@@ -15,7 +15,22 @@
 		this.lastName = lastName;
 	};
 
+	Human.prototype.getFullName = function(){
+		return this.lastName + ' ' + this.firstName;
+	}
+	Human.prototype.gender = '男';
+
 	var human1 = new Human('太郎', '田中');
+	var human2 = new Human('花子', '佐藤');
+
+	console.log(human1.getFullName());
+	console.log(human1.gender);
+	console.log(human2.gender);
+
+	human2.gender = '女';
+
+	console.log(human1.gender);
+	console.log(human2.gender);
 
 </script>
 
