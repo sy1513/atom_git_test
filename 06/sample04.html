@@ -15,6 +15,26 @@
 		console.log('トコトコ');
 	};
 
+	var Dog = function () {};
+	Dog.prototype = new Animal ();
+	Dog.prototype.bark = function(){
+		console.log('ワンワン');
+	};
+
+	var Cat = function () {};
+	Cat.prototype = new Animal ();
+	Cat.prototype.bark = function(){
+		console.log('ニャー');
+	};
+
+	var dog = new Dog();
+	dog.walk();
+	dog.bark();
+
+	var cat = new Cat();
+	cat.walk();
+	cat.bark();
+
 </script>
 
 </body>
