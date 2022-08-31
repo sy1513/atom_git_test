@@ -17,6 +17,36 @@
 
 <script>
 
+// var li = document.createElement('li')
+// var text = document.createTextNode('ぶどう')
+// var list = document.querySelector('.fruitsList')
+
+// li.appendChild(text);
+// list.appendChild(li);
+
+
+(function(){
+	var list = document.querySelector('.fruitsList')
+
+	function addItem(fruit){
+	var li = document.createElement('li')
+	var text = document.createTextNode(fruit)
+
+	li.appendChild(text);
+	list.appendChild(li);
+}
+
+
+	addItem('ぶどう');
+	addItem('なし');
+	addItem('さくらんぼ');
+
+	var firstItem = document.querySelector('.fruitsList :first-child');
+	list.removeChild(firstItem);
+
+})();
+
+
 
 </script>
 
