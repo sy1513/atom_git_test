@@ -18,6 +18,33 @@
 <script>
 
 
+(function(){
+	var header = document.getElementById('pageHeader');
+	console.log(header);
+
+	var items = document.getElementsByClassName('fruitsList_item')
+	console.log(items);
+
+	var firstItem = document.querySelector('.fruitsList_item:first-child')
+	console.log(firstItem);
+
+	var evenItems = document.querySelectorAll('.fruitsList_item:nth-child(even)')
+
+	console.log(evenItems);
+
+	console.log(firstItem.parentNode);
+	console.log(firstItem.parentNode.childNodes);
+
+	var children = firstItem.parentNode.childNodes;
+	[].forEach.call(children , function(item, index){
+		if(item.nodeType === Node.ELEMENT_NODE)
+		console.log(item);
+	});
+
+
+})();
+
+
 </script>
 
 </body>
