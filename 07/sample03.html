@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Sample 03</title>
+</head>
+<body>
+
+<h1 id="pageHeader">sample03</h1>
+
+<button class="addFruit">追加</button>
+
+<ul class="fruitsList">
+	<li class="fruitsList_item">りんご</li>
+	<li class="fruitsList_item">みかん</li>
+	<li class="fruitsList_item">スイカ</li>
+	<li class="fruitsList_item">バナナ</li>
+</ul>
+
+<script>
+
+	(function() {
+		var list = document.querySelector('.fruitsList');
+
+		function addItem(fruit) {
+			var li = document.createElement('li');
+			var text = document.createTextNode(fruit);
+
+			li.appendChild(text);
+			list.appendChild(li);
+		}
+
+	})();
+
+</script>
+
+</body>
+</html>
