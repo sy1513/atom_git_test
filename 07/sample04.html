@@ -21,7 +21,23 @@
 <script>
 
 	(function() {
+		document.querySelector('.showTextValue').addEventListener('click', function(){
+			var textField = document.querySelector('.textField');
+			console.log(textField.value);
+			textField.value ='出力済み';
+		});
 
+		document.querySelector('.showChecked').addEventListener('click' , function(){
+		var inputs = document.querySelectorAll('input[type=checkbox]:checked')
+			console.log(inputs);
+		var array = [];
+
+		[].forEach.call(inputs, function(elm, index){
+			array.push(elm.value)
+			elm.checked = false;
+		});
+		console.log(array.join(','));
+		});
 
 	})();
 
