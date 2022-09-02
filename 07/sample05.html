@@ -9,7 +9,15 @@
 			width: 100px;
 			height: 100px;
 			background-color: #f00;
+			transition: all 0.5s;
 		}
+
+		.square1.active{
+			width: 200px;
+			background-color: #00f;
+			transform: rotate(360deg);
+		}
+		
 	</style>
 </head>
 <body>
@@ -22,6 +30,15 @@
 
 	(function() {
 
+var square1 = document.querySelector('.square1');
+
+square1.addEventListener('mouseenter', function(){
+	square1.classList.add('active');
+});
+
+square1.addEventListener('mouseleave', function(){
+	square1.classList.remove('active');
+});
 	})();
 
 </script>
