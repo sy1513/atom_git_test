@@ -15,6 +15,23 @@
 
 <script>
 
+document.querySelector('.transition').addEventListener('click' , function(){
+ location.href = './sample03.html?val=1';
+});
+
+document.querySelector('.reload').addEventListener('click' , function(){
+ location.reload();
+
+});
+
+document.querySelector('.back').addEventListener('click' , function(){
+ history.back();
+});
+
+document.querySelector('.forward').addEventListener('click' , function(){
+ history.forward();
+});
+
 
 </script>
 
