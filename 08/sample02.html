@@ -13,6 +13,20 @@
 
 <script>
 
+(function(){
+
+var timerID;
+
+	document.querySelector('.btnStart').addEventListener('click' , function(){
+		timerID = window.setInterval(function(){
+    console.log('0.5秒経過しました');
+	},500);
+	});
+	document.querySelector('.btnStop').addEventListener('click' , function(){
+		window.clearInterval(timerID);
+	});
+})();
+
 
 </script>
 
