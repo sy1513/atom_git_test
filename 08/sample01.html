@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Sample 01</title>
+</head>
+<body>
+
+<p>このファイルはSample01です。</p>
+
+<form action="sample01.html" class="appForm">
+	<input type="hidden" name="value" value="10">
+	<input type="submit" value="送信">
+</form>
+
+<script>
+
+// alert('こんにちは');
+document.querySelector('.appForm').addEventListener('submit' , function(e){
+	if(!confirm('送信してよろしいですか？'));
+	e.preventDefault();
+	console.log('キャンセルされました');
+
+});
+
+</script>
+
+</body>
+</html>
