@@ -16,6 +16,34 @@
 
 <script>
 
+(function(){
+	var storage = window.sessionStorage;
+	// console.log(storage);
+
+	var appkey ='myapp';
+
+	var data = {};
+
+  var keyField = document.querySelector('.key');
+	var textField = document.querySelector('.textValue');
+
+	document.querySelector('.save').addEventListener('click' , function(){
+		data[keyField.value] = textField.value;
+ 		storage.setItem(appkey , JSON.stringify(data));
+	});
+  document.querySelector('.restore').addEventListener('click' , function(){
+		data = JSON.parse(storage.getItem(appkey));
+ 		textField.value = data[keyField.value];
+	});
+
+	document.querySelector('.delete').addEventListener('click' , function(){
+	 delete data[keyField.value];
+	 storage.setItem(appkey , JSON.stringify(data));
+
+	});
+
+})();
+
 
 </script>
 
