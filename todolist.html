@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample 05</title>
+</head>
+<body>
+
+  <h1>ToDoアプリ</h1>
+
+  <div class="addForm">
+    <input type="text" class="js-inputText">
+    <input type="button" value="追加" class="js-addButton">
+  </div>
+
+  <ul class="js-todoList">
+  </ul>
+  <script>
+
+  (function(){
+
+    var tododate = [];
+
+    var storage = window.lcalstorage;
+
+
+    function saveDate(){
+    storage.setItem('todo' , JSON.stringify(tododate));
+    }
+
+    function restoreDate(){
+      var date = storage.getItem('todo');
+      return JSON.parse(date || '[]');
+    }
+
+    function changeLineThrough(target , flg){
+      if (flg) {
+        target.style.textDeceration = 'line-through';
+      } else {
+        target.style.textDeceration = 'none';
+      }
+    }
+
+    function addList(date){
+      var textNode = document.createTextNode(date.value);
+      var checkboxNode = document.createElement('input');
+      var li = document.createElement('li');
+
+      checkboxNode.type = 'checkbox';
+      checkboxNode.checked = date.dane;
+      changeLineThrough(li , date.done);
+      checkboxNode.addEventLIstener('change' , function(){
+        changeLineThrough(li,this.checked);
+
+
+        var selfDate = todoDate.find(function(elm){
+          return elm.timestamp === date.timestep;
+        });
+
+        selfDate();
+      });
+
+      li.appendChild(checkboxNode);
+      li.appendChild(textNode);
+
+      document.querySelector('.js-todoList').appendChild(li);
+    }
+
+      todoDate = restoreDate();
+      todoDate.forEach(function(date){
+        addList(data);
+      });
+      document.querySelector('js-addButton').addEventListener('click' , function(){
+        var value = document.querySelector('.js-inputText').value;
+        var timestamp = new Date().getTime();
+
+      });
+
+  })();
+
+
+
+  </script>
+</body>
