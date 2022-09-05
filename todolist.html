@@ -11,6 +11,7 @@
   <div class="addForm">
     <input type="text" class="js-inputText">
     <input type="button" value="追加" class="js-addButton">
+    <input type="button" value="消去" class="js-deleteButton">
   </div>
 
   <ul class="js-todoList">
@@ -57,7 +58,9 @@
           return elm.timestamp === date.timestep;
         });
 
-        selfDate();
+        selfDate.done = this.checked;
+
+        saveDate();
       });
 
       li.appendChild(checkboxNode);
@@ -70,15 +73,31 @@
       todoDate.forEach(function(date){
         addList(data);
       });
-      document.querySelector('js-addButton').addEventListener('click' , function(){
+
+      document.querySelector('js-addButton' ).addEventListener('click' , function(){
         var value = document.querySelector('.js-inputText').value;
         var timestamp = new Date().getTime();
 
+      document.querySelector('js-deleteButton') .addEventListener('click', function(){
+        var value = document.querySelector('.js-inputText').value;
+        var timestamp = new Date().getTime();
+        delete 
+      })
+
+        var date = {
+          value: value,
+          done: false,
+          timestamp: timestamp
+        };
+
+        addList(date);
+
+        todaDate.push(date);
+
+        saveDate();
       });
 
   })();
-
-
 
   </script>
 </body>

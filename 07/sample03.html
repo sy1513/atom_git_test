@@ -30,14 +30,17 @@
 			list.appendChild(li);
 		}
 
+
 			var addBtn = document.querySelector('.addFruit');
 
-			addBtn.addEventListener('click' , function(e){
-				if(e.altkey === false){
+			function clickListener(e){
+				if(e.altKey === false){
 				addItem('ぶどう');
-}
+		}
 
-		});
+			addBtn.removeEventListener('click' , clickListener);
+		}
+			addBtn.addEventListener('click' , clickListener);
 
 	})();
 
